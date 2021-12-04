@@ -1,7 +1,7 @@
 import { parseRelativeUrl } from "next/dist/shared/lib/router/utils/parse-relative-url"
 import { useRouter } from "next/router"
 
-import Styles from "../../styles/slug.module.css"
+import Styles from "../../styles/slug.module.scss"
 
 const ArticlePage = () => {
   const { query } = useRouter()

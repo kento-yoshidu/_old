@@ -1,18 +1,23 @@
 import React from "react"
+import Nexthead from "next/head"
 
 interface Props {
   title: string,
   body: string
 }
 
-const SSGArticlePage: React.VFC<Props> = (props) => {
-  return (
+const SSGArticlePage: React.VFC<Props> = (props) => (
+  <>
+    <Nexthead>
+      <title>{props.title}</title>
+    </Nexthead>
+
     <div>
       <h1>{props.title}</h1>
       <p>{props.body}</p>
     </div>
-  );
-};
+    </>
+)
 
 export const getStaticPaths = async () => {
   const data = await import("../../data/articles.json");
