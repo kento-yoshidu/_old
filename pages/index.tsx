@@ -1,8 +1,9 @@
+import React from "react"
 import Link from "next/link"
 import Nexthead from "next/head"
 import Image from "next/image"
 
-const RootPage = () => (
+const RootPage: React.VFC = () => (
   <>
     <Nexthead>
       <title>HOME</title>
