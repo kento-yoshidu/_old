@@ -1,10 +1,33 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import Head from "next/head"
+import ReactMarkdown from "react-markdown"
+import breaks from "remark-breaks"
 
-const BlogPage = () => (
-  <p>BlogPage</p>
-)
+interface Props {
+  post: {
+    title: string,
+    date: string,
+    body: string,
+  }
+}
+
+const BlogPage: React.VFC<Props> = (props) => {
+  return (
+    <>
+      <Head>
+        <title>{props.post.title}</title>
+      </Head>
+      <article>
+        <h1>{props.post.title}</h1>
+      </article>
+      <div>
+        <ReactMarkdown remarkPlugins={[breaks]}>{props.post.body}</ReactMarkdown>
+      </div>
+    </>
+  )
+}
 
 export const getStaticPaths = () => {
   const fileNames = fs.readdirSync("posts")
