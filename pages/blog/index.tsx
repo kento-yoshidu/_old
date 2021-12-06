@@ -4,16 +4,7 @@ import matter from "gray-matter"
 import Head from "next/head"
 import Link from "next/link"
 
-type Post = {
-  slug: string;
-  title: string;
-  date: string;
-}
-interface Posts {
-  posts: Post
-}
-
-const BlogListPage = ({ posts }: any) => (
+const BlogListPage: any = ({ posts }: { posts: any}) => (
   <>
     <Head>
       <title>Blog</title>
@@ -22,7 +13,7 @@ const BlogListPage = ({ posts }: any) => (
     <h1>BlogListPage</h1>
     
     <ul>
-      {posts.map((post: Post) => {
+      {posts.map((post: any) => {
         return (
           <li key={post.slug}>
             <Link href={`/blog/${post.slug}/`}>
