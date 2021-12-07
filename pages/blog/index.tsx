@@ -7,10 +7,10 @@ import Link from "next/link"
 const BlogListPage: any = ({ posts }: { posts: any}) => (
   <>
     <Head>
-      <title>Blog</title>
+      <title>怪文書一覧 | 怪文書置き場</title>
     </Head>
 
-    <h1>BlogListPage</h1>
+    <h1>怪文書一覧</h1>
     
     <ul>
       {posts.map((post: any) => {
