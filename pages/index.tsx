@@ -2,22 +2,15 @@ import React from "react"
 import Link from "next/link"
 import Nexthead from "next/head"
 import Image from "next/image"
+import { SiteMetadata } from "../config"
 
 const RootPage: React.VFC = () => (
   <>
     <Nexthead>
-      <title>HOME</title>
+      <title>HOME | {SiteMetadata.siteName}</title>
     </Nexthead>
 
-      <h1>next/image example</h1>
-      {/*余白用のdivを追加*/}
-      <div style={{height: "3000px"}}></div>
-      <Image
-        src="/image.png"
-        alt="小さな枝に咲いた桜"
-        width={600}
-        height={400}
-      />
+    <Link href="/blog">怪文書一覧</Link>
   </>
 )
 
