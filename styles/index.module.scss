@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 30px 0;
+  h1 {
+    margin-bottom: 50px;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .postList {
+    li {
+      font-size: 1.8rem;
+      a {
+        color: #444;
+        transition: 0.3s;
+        &:hover {
+          color: #999
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrappper {
+  } 
+}

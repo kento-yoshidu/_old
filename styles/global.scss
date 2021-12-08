@@ -22,13 +22,20 @@ body {
 
 #__next {
   background-color: rgba(0, 0, 0, 0.06);
-  //height: 100%;
+  min-height: 100%;
 }
 
 .main {
   background-color: #fff;
   width: 50%;
+  min-height: 80vh;
   margin: 30px auto 0;
   box-shadow: 0 0 3px 1px #bbb;
   border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 90%;
+  } 
 }
