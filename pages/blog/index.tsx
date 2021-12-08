@@ -4,27 +4,32 @@ import matter from "gray-matter"
 import Head from "next/head"
 import Link from "next/link"
 
+import Styles from "../../styles/index.module.scss"
+
 const BlogListPage: any = ({ posts }: { posts: any}) => (
   <>
     <Head>
       <title>怪文書一覧 | 怪文書置き場</title>
     </Head>
 
-    <h1>怪文書一覧</h1>
-    
-    <ul>
-      {posts.map((post: any) => {
-        return (
-          <li key={post.slug}>
-            <Link href={`/blog/${post.slug}/`}>
-              {post.title}
-            </Link>
-            <time dateTime={post.date}>{post.date}</time>
-          </li>
-        )
-      })
-      }
-    </ul>
+    <div className={Styles.wrapper}>
+      <h1>怪文書一覧</h1>
+      
+      <ul className={Styles.postList}>
+        {posts.map((post: any) => {
+          return (
+            <li key={post.slug}>
+              <Link href={`/blog/${post.slug}/`}>
+                {post.title}
+              </Link>
+              <br />
+              <time dateTime={post.date}>{post.date}</time>
+            </li>
+          )
+        })
+        }
+      </ul>
+    </div>
   </>
 )
 
