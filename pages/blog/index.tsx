@@ -19,11 +19,13 @@ const BlogListPage: any = ({ posts }: { posts: any}) => (
         {posts.map((post: any) => {
           return (
             <li key={post.slug}>
-              <Link href={`/blog/${post.slug}/`}>
-                {post.title}
-              </Link>
-              <br />
-              <time dateTime={post.date}>{post.date}</time>
+              <p className={Styles.icon}>{post.icon}</p>
+              <div className={Styles.textWrapper}>
+                <Link href={`/blog/${post.slug}/`}>
+                  {post.title}
+                </Link>
+                <time dateTime={post.date}>{post.date}</time>
+              </div>
             </li>
           )
         })
@@ -43,7 +45,8 @@ export const getStaticProps = () => {
     return {
       slug: fileName.replace(/\.md$/, ""),
       title: file.data.title,
-      date: file.data.date
+      icon: file.data.icon,
+      date: file.data.date,
     }
   })
 
