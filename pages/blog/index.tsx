@@ -4,12 +4,24 @@ import matter from "gray-matter"
 import Head from "next/head"
 import Link from "next/link"
 
+import SiteMetaData from "../../config"
+
 import Styles from "../../styles/index.module.scss"
 
-const BlogListPage: any = ({ posts }: { posts: any}) => (
+interface Props {
+  posts: {
+    slug: string;
+    title: string;
+    date: string;
+    update: string;
+    icon: string
+  }
+}
+
+const BlogListPage: React.VFC<Props> = ({ posts }: { posts: any}) => (
   <>
     <Head>
-      <title>怪文書一覧 | 怪文書置き場</title>
+      <title>怪文書一覧 | {SiteMetaData.siteName}</title>
     </Head>
 
     <div className={Styles.wrapper}>
@@ -40,13 +52,14 @@ export const getStaticProps = () => {
   const fileNames = fs.readdirSync(dataDir)
   const posts = fileNames.map(fileName => {
     const postPath = path.join(dataDir, fileName)
-    const file = matter.read(postPath)
+    const { data } = matter.read(postPath)
 
     return {
       slug: fileName.replace(/\.md$/, ""),
-      title: file.data.title,
-      icon: file.data.icon,
-      date: file.data.date,
+      title: data.title,
+      date: data.date,
+      update: data.update,
+      icon: data.icon,
     }
   })
 
@@ -55,9 +68,7 @@ export const getStaticProps = () => {
   })
 
   return {
-    props: {
-      posts  
-    }
+    props: { posts }
   }
 }
 
