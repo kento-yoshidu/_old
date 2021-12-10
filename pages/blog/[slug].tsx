@@ -8,6 +8,7 @@ import breaks from "remark-breaks"
 import { TimeOutline } from 'react-ionicons'
 
 import SiteMetaData from "../../config"
+import { getAllPostSlugs, getPostData } from "../../lib/posts"
 import Styles from "../../styles/slug.module.scss"
 
 interface Props {
@@ -52,6 +53,7 @@ const BlogPage: React.VFC<Props> = ({ post }) => {
 }
 
 export const getStaticPaths = () => {
+  /*
   const fileNames = fs.readdirSync("posts")
   const paths = fileNames.map((fileName) => {
     return {
@@ -60,14 +62,24 @@ export const getStaticPaths = () => {
       }
     }
   })
-
+  */
+  const paths = getAllPostSlugs();
+  console.log(paths)
   return {
     paths,
     fallback: false,
   };
 }
 
-export const getStaticProps = ({ params } : { params: any }) => {
+export async function getStaticProps({ params } : { params: { slug: string } }) {
+  /*
+  const postData = await getPostData(params.slug);
+  return {
+    props: {
+      postData,
+    },
+  };
+  */
   const postPath = path.join("posts", `${params.slug}.md`);
   const { data, content } = matter.read(postPath);
   const post = {

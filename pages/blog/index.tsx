@@ -5,7 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 
 import SiteMetaData from "../../config"
-
+import { getAllPostSlugs } from "../../lib/posts"
 import Styles from "../../styles/index.module.scss"
 
 interface Props {
@@ -51,7 +51,7 @@ export const getStaticProps = () => {
   const dataDir = "posts"
   const fileNames = fs.readdirSync(dataDir)
   const posts = fileNames.map(fileName => {
-    const postPath = path.join(dataDir, fileName)
+    const postPath = path.join("posts", fileName)
     const { data } = matter.read(postPath)
 
     return {
