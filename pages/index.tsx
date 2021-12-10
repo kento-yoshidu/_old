@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 import Nexthead from "next/head"
 import Image from "next/image"
-import { SiteMetadata } from "../config"
+import SiteMetadata from "../config"
 
 const RootPage: React.VFC = () => (
   <>
