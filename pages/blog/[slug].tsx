@@ -53,16 +53,6 @@ const BlogPage: React.VFC<Props> = ({ post }) => {
 }
 
 export const getStaticPaths = () => {
-  /*
-  const fileNames = fs.readdirSync("posts")
-  const paths = fileNames.map((fileName) => {
-    return {
-      params: {
-        slug: fileName.replace(/\.md$/, "")
-      }
-    }
-  })
-  */
   const paths = getAllPostSlugs();
   console.log(paths)
   return {
@@ -72,15 +62,7 @@ export const getStaticPaths = () => {
 }
 
 export async function getStaticProps({ params } : { params: { slug: string } }) {
-  /*
-  const postData = await getPostData(params.slug);
-  return {
-    props: {
-      postData,
-    },
-  };
-  */
-  const postPath = path.join("posts", `${params.slug}.md`);
+  const postPath = path.join(SiteMetaData.postDir, `${params.slug}.md`);
   const { data, content } = matter.read(postPath);
   const post = {
     title: data.title,

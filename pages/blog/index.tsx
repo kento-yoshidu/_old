@@ -48,10 +48,9 @@ const BlogListPage: React.VFC<Props> = ({ posts }: { posts: any}) => (
 )
 
 export const getStaticProps = () => {
-  const dataDir = "posts"
-  const fileNames = fs.readdirSync(dataDir)
+  const fileNames = fs.readdirSync(SiteMetaData.postDir)
   const posts = fileNames.map(fileName => {
-    const postPath = path.join("posts", fileName)
+    const postPath = path.join(SiteMetaData.postDir, fileName)
     const { data } = matter.read(postPath)
 
     return {
