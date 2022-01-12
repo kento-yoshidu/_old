@@ -8,7 +8,7 @@ import breaks from "remark-breaks"
 import { TimeOutline } from 'react-ionicons'
 
 import SiteMetaData from "../../config"
-import { getAllPostSlugs, getPostData } from "../../lib/posts"
+import { getAllPostSlugs } from "../../lib/posts"
 import Styles from "../../styles/slug.module.scss"
 
 interface Props {
