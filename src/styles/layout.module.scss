@@ -1,0 +1,6 @@
+.layout {
+  height: max(50vh, 600px);
+  width: clamp(420px, 50%, 1000px);
+  margin: 12vh auto;
+  box-shadow: 0 0 6px 1px #ddd;
+}
