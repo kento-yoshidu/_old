@@ -1,11 +1,10 @@
+import React from "react"
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 
-const Home: NextPage = () => {
-  return (
-    <p>Hello Next.js</p>
-  )
-}
+const IndexPage: React.VFC = () => (
+  <div style={{"paddingTop": "100px"}}>
+    <h2>Hello Next.js</h2>
+  </div>
+)
 
-export default Home
+export default IndexPage
