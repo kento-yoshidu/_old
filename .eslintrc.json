@@ -8,6 +8,8 @@
     "semi": ["warn", "never"],
     "quotes": ["warn", "double"],
     "object-curly-spacing": ["warn", "always"],
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "no-unused-vars": "off",
+    "comma-dangle": ["warn", "never"]
   }
 }

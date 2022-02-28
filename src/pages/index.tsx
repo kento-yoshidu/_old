@@ -1,6 +1,10 @@
 import React from "react"
 
-const IndexPage: React.VFC = ({ test }) => (
+interface Props {
+  test: any
+}
+
+const IndexPage: React.VFC<Props> = ({ test }) => (
   <div>
     <h2>{ test }</h2>
   </div>
@@ -17,6 +21,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      test: "hogehoge"
     }
   }
 }
