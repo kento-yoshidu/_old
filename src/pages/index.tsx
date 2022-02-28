@@ -1,6 +1,10 @@
 import React from "react"
 
-const IndexPage: React.VFC = ({ test }) => (
+interface Props {
+  test: any
+}
+
+const IndexPage: React.VFC<Props> = ({ test }) => (
   <div>
     <h2>{ test }</h2>
   </div>
@@ -13,10 +17,11 @@ export async function getStaticProps() {
     const keys = context.keys()
     const values = keys.map(context)
     console.log(keys)
-  })(require.context('../data', true, /\.md$/))
+  })(require.context("../data", true, /\.md$/))
 
   return {
     props: {
+      test: "hogehoge"
     }
   }
 }
