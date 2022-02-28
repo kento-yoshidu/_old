@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "google",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "double"],
+    "object-curly-spacing": ["warn", "always"],
+    "require-jsdoc": "off"
+  }
 }
