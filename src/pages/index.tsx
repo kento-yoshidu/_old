@@ -2,6 +2,7 @@ import React from "react"
 
 import { getPostSlugs } from "../lib/getPostSlugs"
 import { getPostBySlug } from "../lib/getPostBySlug"
+import { getAllPosts } from "../lib/getAllPosts"
 
 interface Props {
   test: any
@@ -34,7 +35,7 @@ export async function getStaticProps() {
 
   const result: Item = getPostBySlug("01", ["slug", "content", "title"])
 
-  console.log(result)
+  console.log(getAllPosts(["slug", "title", "date", "tags"]))
 
   return {
     props: {
