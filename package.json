@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "eslint": "eslint src/**/**.{ts,tsx}",
     "stylelint": "stylelint src/**/**.scss"
   },
   "dependencies": {
