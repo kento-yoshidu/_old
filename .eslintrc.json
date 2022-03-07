@@ -10,6 +10,7 @@
     "object-curly-spacing": ["warn", "always"],
     "require-jsdoc": "off",
     "no-unused-vars": "off",
-    "comma-dangle": ["warn", "never"]
+    "comma-dangle": ["warn", "never"],
+    "max-len": "off"
   }
 }

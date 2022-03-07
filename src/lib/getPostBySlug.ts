@@ -11,6 +11,7 @@ type Item = {
   title: string;
   date: string;
   tags: string[];
+  icon: string;
 };
 
 export const getPostBySlug = (slug: string, fields: string[]) => {
@@ -23,7 +24,8 @@ export const getPostBySlug = (slug: string, fields: string[]) => {
     content: "",
     title: "",
     date: "",
-    tags: []
+    tags: [],
+    icon: ""
   }
 
   fields.forEach((field: string) => {
@@ -35,7 +37,7 @@ export const getPostBySlug = (slug: string, fields: string[]) => {
       items[field] = content
     }
 
-    if (field === "title" || field === "date" || field === "tags") {
+    if (field === "title" || field === "date" || field === "tags" || field === "icon") {
       items[field] = data[field]
     }
   })
