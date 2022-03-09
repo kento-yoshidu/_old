@@ -4,16 +4,9 @@ import { getPostSlugs } from "../lib/getPostSlugs"
 import { getPostBySlug } from "../lib/getPostBySlug"
 import { getAllPosts } from "../lib/getAllPosts"
 
-import * as Styles from "../styles/index.module.scss"
+import { Item } from "../types/types"
 
-type Item = {
-  slug: string;
-  content: string;
-  title: string;
-  date: string;
-  tags: string[];
-  icon: string;
-};
+import * as Styles from "../styles/index.module.scss"
 
 export async function getStaticProps() {
   const allPosts = getAllPosts(["slug", "title", "date", "tags", "icon"])
