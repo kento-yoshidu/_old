@@ -36,7 +36,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
 
 const Post = ({ post }: { post: Item }) => (
   <article>
-    <p>{ post.title}</p>
+    <p>{ post.title }</p>
   </article>
 )
 
