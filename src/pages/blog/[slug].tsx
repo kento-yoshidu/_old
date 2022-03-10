@@ -1,6 +1,8 @@
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
 
+import { Item } from "../../types/types"
+
 export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug"])
 
@@ -16,7 +18,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: { params: { slug: string }}) => {
   const post = getPostBySlug(params.slug, [
     "slug",
     "title",
@@ -32,7 +34,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-const Post = ({ post }) => (
+const Post = ({ post }: { post: Item }) => (
   <article>
     <p>{ post.title}</p>
   </article>
