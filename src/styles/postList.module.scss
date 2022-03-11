@@ -13,7 +13,7 @@
   border-radius: 4px;
 }
 
-.icon {
+.mainIcon {
   margin-right: 3rem;
   font-size: 5rem;
 }
@@ -21,19 +21,26 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .postTitle {
+  color: #444;
   font-size: 2.5rem;
+  font-weight: bold;
+
+  &:hover {
+    color: var(--main-color);
+  }
 }
 
 .dateWrapper {
   font-size: 1.6rem;
   font-weight: 900;
-  .date {
-    margin-right: 12px;
-  }
+}
+
+.date {
+  margin-right: 20px;
 }
 
 .author {
@@ -47,7 +54,12 @@
 }
 
 .tag {
-  margin-right: 12px;
+  margin-right: 20px;
   font-size: 1.6rem;
   font-weight: 900;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 1.75rem;
 }
