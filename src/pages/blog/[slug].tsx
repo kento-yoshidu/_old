@@ -3,6 +3,8 @@ import { getPostBySlug } from "../../lib/getPostBySlug"
 
 import { Item } from "../../types/types"
 
+import ReactMarkdown from "react-markdown"
+
 export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug"])
 
@@ -23,11 +25,11 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
     "slug",
     "title",
     "date",
+    "update",
+    "author",
     "tags",
     "content"
   ])
-
-  console.log(post)
 
   return {
     props: { post }
@@ -36,7 +38,22 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
 
 const Post = ({ post }: { post: Item }) => (
   <article>
-    <p>{ post.title }</p>
+    <h1>{ post.title }</h1>
+
+    <time>{post.date}</time>
+    <time>{post.update}</time>
+
+    <p>{post.author}</p>
+
+    <ul>
+      {post.tags.map((tag) => (
+        <li key={`tag${tag}`}>{tag}</li>
+      ))}
+    </ul>
+
+    <ReactMarkdown>
+      {post.content}
+    </ReactMarkdown>
   </article>
 )
 
