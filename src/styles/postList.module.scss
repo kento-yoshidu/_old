@@ -1,0 +1,53 @@
+.postList {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px 30px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.icon {
+  margin-right: 3rem;
+  font-size: 5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postTitle {
+  font-size: 2.5rem;
+}
+
+.dateWrapper {
+  font-size: 1.6rem;
+  font-weight: 900;
+  .date {
+    margin-right: 12px;
+  }
+}
+
+.author {
+  font-size: 1.65rem;
+  font-weight: 900;
+}
+
+.tagList {
+  display: flex;
+  list-style: none;
+}
+
+.tag {
+  margin-right: 12px;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
