@@ -1,6 +1,8 @@
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
 
+import remarkGfm from "remark-gfm"
+
 import { Item } from "../../types/types"
 
 import ReactMarkdown from "react-markdown"
@@ -51,7 +53,7 @@ const Post = ({ post }: { post: Item }) => (
       ))}
     </ul>
 
-    <ReactMarkdown>
+    <ReactMarkdown remarkPlugins={[remarkGfm]}>
       {post.content}
     </ReactMarkdown>
   </article>
