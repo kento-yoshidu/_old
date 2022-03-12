@@ -56,7 +56,7 @@ const Post = ({ post }: { post: Item }) => (
     <h1 className={Styles.postTitle}>{ post.title }</h1>
 
     <div className={Styles.info}>
-      <div className={Styles.dateWrapper}>
+      <div>
         <time className={Styles.date}>
           <FontAwesomeIcon icon={faClock} />
           {post.date}
