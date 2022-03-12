@@ -1,11 +1,21 @@
+import ReactMarkdown from "react-markdown"
+
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
 
 import remarkGfm from "remark-gfm"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faClock,
+  faClockRotateLeft,
+  faUser,
+  faTag
+} from "@fortawesome/free-solid-svg-icons"
+
 import { Item } from "../../types/types"
 
-import ReactMarkdown from "react-markdown"
+import * as Styles from "../../styles/post.module.scss"
 
 export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug"])
@@ -30,6 +40,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
     "update",
     "author",
     "tags",
+    "icon",
     "content"
   ])
 
@@ -39,23 +50,46 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
 }
 
 const Post = ({ post }: { post: Item }) => (
-  <article>
-    <h1>{ post.title }</h1>
+  <article className={Styles.post}>
 
-    <time>{post.date}</time>
-    <time>{post.update}</time>
+    <p className={Styles.icon}>{post.icon}</p>
+    <h1 className={Styles.postTitle}>{ post.title }</h1>
 
-    <p>{post.author}</p>
+    <div className={Styles.info}>
+      <div className={Styles.dateWrapper}>
+        <time className={Styles.date}>
+          <FontAwesomeIcon icon={faClock} />
+          {post.date}
+        </time>
+        <time className={Styles.date}>
+          <FontAwesomeIcon icon={faClockRotateLeft} />
+          {post.update}
+        </time>
+      </div>
 
-    <ul>
-      {post.tags.map((tag) => (
-        <li key={`tag${tag}`}>{tag}</li>
-      ))}
-    </ul>
+      <p className={Styles.author}>
+        <FontAwesomeIcon icon={faUser} />
+        {post.author}
+      </p>
 
-    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-      {post.content}
-    </ReactMarkdown>
+      <ul className={Styles.tagList}>
+        {post.tags.map((tag) => (
+          <li
+            key={`tag${tag}`}
+            className={Styles.tag}
+          >
+            <FontAwesomeIcon icon={faTag} />
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <main className={Styles.main}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {post.content}
+      </ReactMarkdown>
+    </main>
   </article>
 )
 

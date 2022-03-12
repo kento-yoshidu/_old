@@ -1,0 +1,62 @@
+.post {
+  padding: 80px 0 30px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.icon {
+  font-size: 7rem;
+  text-align: center;
+}
+
+.postTitle {
+  font-size: 4.5rem;
+  line-height: 1.5;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.date {
+  margin-right: 30px;
+  font-size: 2rem;
+  border: 1px solid red;
+}
+
+.author {
+  font-size: 2rem;
+}
+
+.tagList {
+  display: flex;
+  margin: 0;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.tag {
+  margin-right: 20px; 
+}
+
+.main {
+  margin-top: 60px;
+
+  h1 {
+    border-bottom: 5px solid var(--main-color);
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-indent: 0.8rem;
+  }
+}
