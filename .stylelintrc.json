@@ -1,4 +1,7 @@
 {
   "extends": ["stylelint-config-standard"],
-  "ignoreFiles": "src/scss/reset.scss"
+  "ignoreFiles": "src/scss/reset.scss",
+  "rules": {
+    "selector-class-pattern": null
+  }
 }

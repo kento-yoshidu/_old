@@ -6,8 +6,6 @@ import { PostList } from "../components/postList"
 
 import { Item } from "../types/types"
 
-import * as Styles from "../styles/index.module.scss"
-
 export async function getStaticProps() {
   const allPosts = getAllPosts(["slug", "title", "date", "update", "author", "tags", "icon"])
 
