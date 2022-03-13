@@ -1,16 +1,16 @@
 .post {
-  padding: 80px 0 30px;
+  padding: unquote("min(12vw, 80px)") 0 50px;
   margin: 0 auto;
-  width: 80%;
+  width: unquote("max(300px, 80%)");
 }
 
 .icon {
-  font-size: 7rem;
+  font-size: clamp(4rem, 5vw, 7rem);
   text-align: center;
 }
 
 .postTitle {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
   line-height: 1.5;
 }
 
@@ -24,21 +24,20 @@
   }
 }
 
-.date {
-  margin-right: 30px;
-  font-size: 2rem;
-  border: 1px solid red;
+.date,
+.author,
+.tag {
+  font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-.author {
-  font-size: 2rem;
+.date {
+  margin-right: 30px;
 }
 
 .tagList {
   display: flex;
   margin: 0;
   list-style: none;
-  font-size: 2rem;
 }
 
 .tag {
@@ -47,16 +46,27 @@
 
 .main {
   margin-top: 60px;
+  margin-top: unquote("min(12vw, 60px)");
 
   h1 {
     border-bottom: 5px solid var(--main-color);
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1.4;
+  }
+
+  h2 {
+    margin: 45px 0 35px;
+    padding-left: 12px;
+    border-left: 8px solid var(--main-color);
+    font-size: clamp(2.2rem, 3.7vw, 4rem);
+    line-height: 1.4;
   }
 
   p {
-    font-size: 1.8rem;
-    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
     letter-spacing: 1px;
+    line-height: 1.5;
     text-indent: 0.8rem;
   }
 }
