@@ -1,60 +1,37 @@
 import { getAllPosts } from "../../lib/getAllPosts"
-import { getPostByTag } from "../../lib/getPostByTag"
+import { getPostBySlug } from "../../lib/getPostBySlug"
+import { getTags } from "../../lib/getTags"
+import { getAssociatedPosts } from "../../lib/getAssociatedPosts"
 
 export const getStaticPaths = async () => {
-  // この時点でタグごとに集計しておく必要がある
-  const posts = getAllPosts(["slug", "date"])
-
-  const tags = ["aaa", "bbb"]
+  const paths = getTags().map((tag) => {
+    return `/tag/${tag}`
+  })
 
   return {
-    paths: tags.map((tag) => {
-      return {
-        params: {
-          tag: tag
-        }
-      }
-    }),
+    paths,
     fallback: false
   }
 }
 
-export const getStaticProps = async ({ params }: { params: { tag: string }}) => {
-  const post = getPostByTag(params.tag, [
-    "slug",
-    "title",
-    "date",
-    "update",
-    "author",
-    "tags",
-    "icon",
-    "content"
-  ])
+export const getStaticProps = async ({ params }: { params: any }) => {
+  const tag = params.tag
+
+  const postData = await getAssociatedPosts(tag)
 
   return {
-    props: { post }
+    props: {
+      postData,
+      tag
+    }
   }
-
-  /*
-  const post = getPostBySlug("01", [
-    "slug",
-    "title",
-    "date",
-    "update",
-    "author",
-    "tags",
-    "icon",
-    "content"
-  ])
-
-  return {
-    props: { post }
-  }
-  */
 }
 
-const Post = ({ post }: { post: any }) => (
-  <p>hogehoge</p>
-)
+const Post = ({ postData, tag }: { postData: any, tag: string }) => {
+  console.log(tag)
+  return (
+    <p>{tag}</p>
+  )
+}
 
 export default Post
