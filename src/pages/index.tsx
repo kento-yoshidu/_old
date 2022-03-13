@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 
 import { getAllPosts } from "../lib/getAllPosts"
 
@@ -19,10 +20,15 @@ interface Props {
 }
 
 const IndexPage: React.VFC<Props> = ({ allPosts }) => (
-  <PostList
-    pageTitle="記事一覧"
-    allPosts={allPosts}
-  />
+  <>
+    <Head>
+      <title>HOME | 怪文書置き場</title>
+    </Head>
+    <PostList
+      pageTitle="記事一覧"
+      allPosts={allPosts}
+    />
+  </>
 )
 
 export default IndexPage

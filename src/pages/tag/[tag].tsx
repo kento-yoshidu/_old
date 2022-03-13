@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import { getTags } from "../../lib/getTags"
 import { getPostsByTag } from "../../lib/getPostsByTag"
 
@@ -28,10 +30,15 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 }
 
 const Post = ({ postData, tag }: { postData: any, tag: string }) => (
-  <PostList
-    pageTitle={`${tag} タグの記事一覧`}
-    allPosts={postData}
-  />
+  <>
+    <Head>
+      <title>{`${tag}タグの記事一覧 | 怪文書置き場`}</title>
+    </Head>
+    <PostList
+      pageTitle={`${tag} タグの記事一覧`}
+      allPosts={postData}
+    />
+  </>
 )
 
 export default Post

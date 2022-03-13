@@ -16,3 +16,12 @@ html {
     sans-serif;
   scroll-behavior: smooth;
 }
+
+a {
+  color: #444;
+  transition: 0.3s;
+
+  &:hover {
+    color: var(--main-color);
+  }
+}
