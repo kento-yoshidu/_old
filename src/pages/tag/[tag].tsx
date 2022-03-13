@@ -1,7 +1,7 @@
-import { getAllPosts } from "../../lib/getAllPosts"
-import { getPostBySlug } from "../../lib/getPostBySlug"
 import { getTags } from "../../lib/getTags"
-import { getAssociatedPosts } from "../../lib/getAssociatedPosts"
+import { getPostsByTag } from "../../lib/getPostsByTag"
+
+import { PostList } from "../../components/postList"
 
 export const getStaticPaths = async () => {
   const paths = getTags().map((tag) => {
@@ -17,7 +17,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }: { params: any }) => {
   const tag = params.tag
 
-  const postData = await getAssociatedPosts(tag)
+  const postData = await getPostsByTag(tag)
 
   return {
     props: {
@@ -27,11 +27,11 @@ export const getStaticProps = async ({ params }: { params: any }) => {
   }
 }
 
-const Post = ({ postData, tag }: { postData: any, tag: string }) => {
-  console.log(tag)
-  return (
-    <p>{tag}</p>
-  )
-}
+const Post = ({ postData, tag }: { postData: any, tag: string }) => (
+  <PostList
+    pageTitle={`${tag} タグの記事一覧`}
+    allPosts={postData}
+  />
+)
 
 export default Post

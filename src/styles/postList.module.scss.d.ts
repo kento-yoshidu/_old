@@ -4,6 +4,7 @@ export const dateWrapper: string;
 export const icon: string;
 export const listItem: string;
 export const mainIcon: string;
+export const pageTitle: string;
 export const postList: string;
 export const postTitle: string;
 export const tag: string;

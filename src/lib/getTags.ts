@@ -1,5 +1,9 @@
 import { getAllPosts } from "./getAllPosts"
 
+/**
+ * 全てのタグを収集し返す
+ */
+
 export const getTags = () => {
   const allTags = getAllPosts(["tags"])
 
