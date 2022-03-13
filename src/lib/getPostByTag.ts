@@ -6,8 +6,11 @@ import { Item } from "../types/types"
 
 const postsDirectory = join(process.cwd(), "src/contents")
 
-export const getPostBySlug = (slug: string, fields: string[]) => {
-  const fullPath = join(postsDirectory, slug, "index.md")
+export const getPostByTag = (tag: string, slug: string, fields: string[]) => {
+  const fullPath = join(postsDirectory, tag, "index.md")
+
+  console.log("tagno", fullPath)
+
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const { data, content } = matter(fileContents)
 
