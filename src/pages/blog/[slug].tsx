@@ -18,7 +18,7 @@ import { Item } from "../../types/types"
 import * as Styles from "../../styles/post.module.scss"
 
 export const getStaticPaths = async () => {
-  const posts = getAllPosts(["slug"])
+  const posts = getAllPosts(["slug", "date"])
 
   return {
     paths: posts.map((post) => {
