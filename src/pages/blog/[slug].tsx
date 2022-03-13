@@ -1,3 +1,5 @@
+import Head from "next/Head"
+import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 
 import { getAllPosts } from "../../lib/getAllPosts"
@@ -50,47 +52,55 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
 }
 
 const Post = ({ post }: { post: Item }) => (
-  <article className={Styles.post}>
+  <>
+    <Head>
+      <title>{`${post.title} | 怪文書置き場`}</title>
+    </Head>
 
-    <p className={Styles.icon}>{post.icon}</p>
-    <h1 className={Styles.postTitle}>{ post.title }</h1>
+    <article className={Styles.post}>
 
-    <div className={Styles.info}>
-      <div>
-        <time className={Styles.date}>
-          <FontAwesomeIcon icon={faClock} />
-          {post.date}
-        </time>
-        <time className={Styles.date}>
-          <FontAwesomeIcon icon={faClockRotateLeft} />
-          {post.update}
-        </time>
+      <p className={Styles.icon}>{post.icon}</p>
+      <h1 className={Styles.postTitle}>{ post.title }</h1>
+
+      <div className={Styles.info}>
+        <div>
+          <time className={Styles.date}>
+            <FontAwesomeIcon icon={faClock} />
+            {post.date}
+          </time>
+          <time className={Styles.date}>
+            <FontAwesomeIcon icon={faClockRotateLeft} />
+            {post.update}
+          </time>
+        </div>
+
+        <p className={Styles.author}>
+          <FontAwesomeIcon icon={faUser} />
+          {post.author}
+        </p>
+
+        <ul className={Styles.tagList}>
+          {post.tags.map((tag) => (
+            <li
+              key={`tag${tag}`}
+              className={Styles.tag}
+            >
+              <FontAwesomeIcon icon={faTag} />
+              <Link href={`/tag/${tag}`}>
+                {tag}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <p className={Styles.author}>
-        <FontAwesomeIcon icon={faUser} />
-        {post.author}
-      </p>
-
-      <ul className={Styles.tagList}>
-        {post.tags.map((tag) => (
-          <li
-            key={`tag${tag}`}
-            className={Styles.tag}
-          >
-            <FontAwesomeIcon icon={faTag} />
-            {tag}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <main className={Styles.main}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-        {post.content}
-      </ReactMarkdown>
-    </main>
-  </article>
+      <main className={Styles.main}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {post.content}
+        </ReactMarkdown>
+      </main>
+    </article>
+  </>
 )
 
 export default Post
