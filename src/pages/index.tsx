@@ -20,6 +20,7 @@ interface Props {
 
 const IndexPage: React.VFC<Props> = ({ allPosts }) => (
   <PostList
+    pageTitle="記事一覧"
     allPosts={allPosts}
   />
 )
