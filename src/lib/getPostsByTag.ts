@@ -1,10 +1,8 @@
 import { getAllPosts } from "./getAllPosts"
 
-export async function getAssociatedPosts(tag: string) {
-  const allPosts = getAllPosts(["tags"])
+export async function getPostsByTag(tag: string) {
+  const allPosts = getAllPosts(["slug", "title", "date", "update", "author", "tags", "icon"])
   const associatedPosts = allPosts.filter((data) => {
-    console.log("data is", data)
-
     return data.tags.includes(tag)
   })
 
