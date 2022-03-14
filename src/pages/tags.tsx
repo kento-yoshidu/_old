@@ -3,6 +3,8 @@ import Head from "next/head"
 
 import { getTags } from "../lib/getTags"
 
+import { PageTitle } from "../components/pageTitle"
+
 import * as Styles from "../styles/tags.module.scss"
 
 export const getStaticProps = async () => {
@@ -15,11 +17,15 @@ export const getStaticProps = async () => {
   }
 }
 
-const Tags = ({ allTags }: { allTags: string[]}) => (
+const Tags = ({ allTags }: { allTags: string[] }) => (
   <>
     <Head>
       <title>タグ一覧 | 怪文書置き場</title>
     </Head>
+
+    <PageTitle
+      pageTitle="タグ一覧"
+    />
 
     <ul className={Styles.list}>
       {allTags.map((tag) => (

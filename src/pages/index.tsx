@@ -2,9 +2,9 @@ import React from "react"
 import Head from "next/head"
 
 import { getAllPosts } from "../lib/getAllPosts"
-import { getAuthors } from "../lib/getAuthors"
 
 import { PostList } from "../components/postList"
+import { PageTitle } from "../components/pageTitle"
 
 import { Item } from "../types/types"
 
@@ -25,8 +25,12 @@ const IndexPage: React.VFC<Props> = ({ allPosts }) => (
     <Head>
       <title>HOME | 怪文書置き場</title>
     </Head>
-    <PostList
+
+    <PageTitle
       pageTitle="記事一覧"
+    />
+
+    <PostList
       allPosts={allPosts}
     />
   </>

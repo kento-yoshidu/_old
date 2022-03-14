@@ -14,77 +14,73 @@ import { Item } from "../types/types"
 import * as Styles from "../styles/postList.module.scss"
 
 interface Props {
-  pageTitle: string;
   allPosts: Item[];
 }
 
-export const PostList: React.VFC<Props> = ({ pageTitle, allPosts }) => (
-  <>
-    <h1 className={Styles.pageTitle}>{pageTitle}</h1>
-    <ul className={Styles.postList}>
-      {allPosts.map((post) => (
-        <li
-          className={Styles.listItem}
-          key={`${post.title}key`}
-        >
-          <p className={Styles.mainIcon}>{post.icon}</p>
+export const PostList: React.VFC<Props> = ({ allPosts }) => (
+  <ul className={Styles.postList}>
+    {allPosts.map((post) => (
+      <li
+        className={Styles.listItem}
+        key={`${post.title}key`}
+      >
+        <p className={Styles.mainIcon}>{post.icon}</p>
 
-          <div className={Styles.wrapper}>
-            <Link
-              href={`/blog/${post.slug}/`}
-            >
-              <a className={Styles.postTitle}>
-                {post.title}
-              </a>
-            </Link>
+        <div className={Styles.wrapper}>
+          <Link
+            href={`/blog/${post.slug}/`}
+          >
+            <a className={Styles.postTitle}>
+              {post.title}
+            </a>
+          </Link>
 
-            <div className={Styles.dateWrapper}>
-              <time className={Styles.date}>
-                <FontAwesomeIcon
-                  icon={faClock}
-                  className={Styles.icon}
-                />
-                {post.date}
-              </time>
-
-              <time className={Styles.date}>
-                <FontAwesomeIcon
-                  icon={faClockRotateLeft}
-                  className={Styles.icon}
-                />
-                {post.update}
-              </time>
-            </div>
-
-            <p className={Styles.author}>
+          <div className={Styles.dateWrapper}>
+            <time className={Styles.date}>
               <FontAwesomeIcon
-                icon={faUser}
+                icon={faClock}
                 className={Styles.icon}
               />
-              <Link href={`/author/${post.author}/`}>
-                {post.author}
-              </Link>
-            </p>
+              {post.date}
+            </time>
 
-            <ul className={Styles.tagList}>
-              {post.tags.map((tag) => (
-                <li
-                  key={`${post}${tag}`}
-                  className={Styles.tag}
-                >
-                  <FontAwesomeIcon
-                    icon={faTag}
-                    className={Styles.icon}
-                  />
-                  <Link href={`/tag/${tag}/`}>
-                    {tag}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <time className={Styles.date}>
+              <FontAwesomeIcon
+                icon={faClockRotateLeft}
+                className={Styles.icon}
+              />
+              {post.update}
+            </time>
           </div>
-        </li>
-      ))}
-    </ul>
-  </>
+
+          <p className={Styles.author}>
+            <FontAwesomeIcon
+              icon={faUser}
+              className={Styles.icon}
+            />
+            <Link href={`/author/${post.author}/`}>
+              {post.author}
+            </Link>
+          </p>
+
+          <ul className={Styles.tagList}>
+            {post.tags.map((tag) => (
+              <li
+                key={`${post}${tag}`}
+                className={Styles.tag}
+              >
+                <FontAwesomeIcon
+                  icon={faTag}
+                  className={Styles.icon}
+                />
+                <Link href={`/tag/${tag}/`}>
+                  {tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ul>
 )
