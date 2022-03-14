@@ -61,7 +61,9 @@ export const PostList: React.VFC<Props> = ({ pageTitle, allPosts }) => (
                 icon={faUser}
                 className={Styles.icon}
               />
-              {post.author}
+              <Link href={`/author/${post.author}/`}>
+                {post.author}
+              </Link>
             </p>
 
             <ul className={Styles.tagList}>
