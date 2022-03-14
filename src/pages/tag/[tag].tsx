@@ -34,6 +34,7 @@ const Post = ({ postData, tag }: { postData: any, tag: string }) => (
     <Head>
       <title>{`${tag}タグの記事一覧 | 怪文書置き場`}</title>
     </Head>
+
     <PostList
       pageTitle={`${tag} タグの記事一覧`}
       allPosts={postData}

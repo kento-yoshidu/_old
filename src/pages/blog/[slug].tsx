@@ -76,7 +76,9 @@ const Post = ({ post }: { post: Item }) => (
 
         <p className={Styles.author}>
           <FontAwesomeIcon icon={faUser} />
-          {post.author}
+          <Link href={`/author/${post.author}`}>
+            {post.author}
+          </Link>
         </p>
 
         <ul className={Styles.tagList}>

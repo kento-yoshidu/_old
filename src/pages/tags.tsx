@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
   }
 }
 
-export const Tags = ({ allTags }: { allTags: string[]}) => (
+const Tags = ({ allTags }: { allTags: string[]}) => (
   <>
     <Head>
       <title>タグ一覧 | 怪文書置き場</title>

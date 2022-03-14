@@ -2,6 +2,7 @@ import React from "react"
 import Head from "next/head"
 
 import { getAllPosts } from "../lib/getAllPosts"
+import { getAuthors } from "../lib/getAuthors"
 
 import { PostList } from "../components/postList"
 

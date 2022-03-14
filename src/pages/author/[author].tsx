@@ -33,7 +33,7 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 const AuthorPost = ({ postData, author }: { postData: any, author: string }) => (
   <>
     <Head>
-      <title></title>
+      <title>{`${author}さんの記事一覧 | 怪文書置き場`}</title>
     </Head>
 
     <PostList
