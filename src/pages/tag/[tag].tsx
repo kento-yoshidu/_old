@@ -3,7 +3,9 @@ import Head from "next/head"
 import { getTags } from "../../lib/getTags"
 import { getPostsByTag } from "../../lib/getPostsByTag"
 
+import { pageTitle } from "../../styles/pageTitle.module.scss"
 import { PostList } from "../../components/postList"
+import { PageTitle } from "../../components/pageTitle"
 
 export const getStaticPaths = async () => {
   const paths = getTags().map((tag) => {
@@ -35,8 +37,11 @@ const Post = ({ postData, tag }: { postData: any, tag: string }) => (
       <title>{`${tag}タグの記事一覧 | 怪文書置き場`}</title>
     </Head>
 
-    <PostList
+    <PageTitle
       pageTitle={`${tag} タグの記事一覧`}
+    />
+
+    <PostList
       allPosts={postData}
     />
   </>

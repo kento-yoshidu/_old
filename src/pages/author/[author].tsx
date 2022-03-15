@@ -3,6 +3,7 @@ import Head from "next/head"
 import { getAuthors } from "../../lib/getAuthors"
 import { getPostsByAuthor } from "../../lib/getPostsByAuthor"
 
+import { PageTitle } from "../../components/pageTitle"
 import { PostList } from "../../components/postList"
 
 export const getStaticPaths = async () => {
@@ -36,8 +37,11 @@ const AuthorPost = ({ postData, author }: { postData: any, author: string }) => 
       <title>{`${author}さんの記事一覧 | 怪文書置き場`}</title>
     </Head>
 
-    <PostList
+    <PageTitle
       pageTitle={`${author}さんの記事一覧`}
+    />
+
+    <PostList
       allPosts={postData}
     />
   </>
