@@ -53,15 +53,22 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
             </time>
           </div>
 
-          <p className={Styles.author}>
+          <ul className={Styles.authors}>
             <FontAwesomeIcon
               icon={faUser}
               className={Styles.icon}
             />
-            <Link href={`/author/${post.author}/`}>
-              {post.author}
-            </Link>
-          </p>
+            {post.authors.map((author) => (
+              <li key={`author/li/${author}`}>
+                <Link
+                  href={`/author/${author}/`}
+                  key={`author/${author}`}
+                >
+                  {author}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <ul className={Styles.tagList}>
             {post.tags.map((tag) => (

@@ -20,18 +20,27 @@
   gap: 15px;
 
   svg {
-    margin-right: 4px;
+    margin-right: 10px;
   }
 }
 
 .date,
-.author,
+.authors,
 .tag {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 .date {
   margin-right: 30px;
+}
+
+.authors {
+  display: flex;
+  list-style: none;
+
+  li {
+    margin-right: 12px;
+  }
 }
 
 .tagList {
@@ -41,7 +50,7 @@
 }
 
 .tag {
-  margin-right: 20px; 
+  margin-right: 20px;
 }
 
 .main {

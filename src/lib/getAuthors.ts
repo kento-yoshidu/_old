@@ -1,12 +1,14 @@
-import { getAllPosts } from "./getAllPosts";
+import { getAllPosts } from "./getAllPosts"
 
 export const getAuthors = (): string[] => {
-  const allAuthors = getAllPosts(["author"])
+  const allAuthors = getAllPosts(["authors"])
 
-  const authors: string[] = []
+  let authors: string[] = []
 
   allAuthors.forEach((post) => {
-    authors.push(post.author)
+    post.authors.map((_) => {
+      authors = [...authors, ...post.authors]
+    })
   })
 
   const setAuthors = [...new Set(Array.from(authors))]

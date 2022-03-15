@@ -49,9 +49,15 @@
   margin-right: 20px;
 }
 
-.author {
+.authors {
+  display: flex;
   font-size: clamp(1.3rem, 1.8vw, 1.65rem);
   font-weight: 900;
+  list-style: none;
+
+  li {
+    margin-right: 12px;
+  }
 }
 
 .tagList {
