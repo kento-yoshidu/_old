@@ -1,0 +1,18 @@
+.button {
+  position: absolute;
+  top: 50%;
+  right: 10vw;
+  transform: translateY(-50%);
+
+  svg {
+    font-size: 3.5rem;
+  }
+}
+
+.sun {
+  color: orange;
+}
+
+.moon {
+  color: yellow;
+}

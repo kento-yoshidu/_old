@@ -1,6 +1,8 @@
 import React from "react"
 import Link from "next/link"
 
+import { SwitchTheme } from "./switchTheme"
+
 import * as Styles from "../styles/header.module.scss"
 
 export const Header: React.VFC = () => (
@@ -10,5 +12,7 @@ export const Header: React.VFC = () => (
         📚 怪文書置き場
       </Link>
     </h1>
+
+    <SwitchTheme />
   </header>
 )
