@@ -1,4 +1,4 @@
-export const author: string;
+export const authors: string;
 export const date: string;
 export const dateWrapper: string;
 export const icon: string;
