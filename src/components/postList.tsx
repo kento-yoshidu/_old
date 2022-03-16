@@ -1,6 +1,10 @@
 import React from "react"
 import Link from "next/link"
 
+import { Item } from "../types/types"
+
+import * as Styles from "../styles/postList.module.scss"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
@@ -9,9 +13,9 @@ import {
   faTag
 } from "@fortawesome/free-solid-svg-icons"
 
-import { Item } from "../types/types"
-
-import * as Styles from "../styles/postList.module.scss"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 interface Props {
   allPosts: Item[];

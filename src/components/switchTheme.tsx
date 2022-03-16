@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react"
 
+import * as Styles from "../styles/switchTheme.module.scss"
+
 type Theme = "light" | "dark"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faSun,
+  faMoon
+} from "@fortawesome/free-solid-svg-icons"
+
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 export const SwitchTheme = () => {
   const [theme, setTheme] = useState<Theme>("light")
@@ -31,8 +43,21 @@ export const SwitchTheme = () => {
   }, [theme])
 
   return (
-    <button onClick={clickHandle}>
-      CLick ME
+    <button
+      className={Styles.button}
+      onClick={clickHandle}
+    >
+      {theme === "light" ? (
+        <FontAwesomeIcon
+          className={Styles.sun}
+          icon={faSun}
+        />
+      ) : (
+        <FontAwesomeIcon
+          icon={faMoon}
+          className={Styles.moon}
+        />
+      )}
     </button>
   )
 }
