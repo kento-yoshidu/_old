@@ -9,7 +9,7 @@ import { PageTitle } from "../components/pageTitle"
 import { Item } from "../types/types"
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["slug", "title", "date", "update", "author", "tags", "icon"])
+  const allPosts = getAllPosts(["slug", "title", "date", "update", "authors", "tags", "icon"])
 
   return {
     props: { allPosts }

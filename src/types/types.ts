@@ -4,7 +4,7 @@ export type Item = {
   title: string;
   date: string;
   update: string;
-  author: string;
+  authors: string[];
   tags: string[];
   icon: string;
 }
