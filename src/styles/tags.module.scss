@@ -1,6 +1,7 @@
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   margin: 50px auto;
   width: 80%;
@@ -9,7 +10,7 @@
 
 .listItem {
   padding: 5px 10px;
-  border: 2px solid #666;
+  border: 2px solid var(--border-color);
   border-radius: 4px;
 
   a {
