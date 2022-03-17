@@ -9,11 +9,5 @@ icon: "🥝"
 
 # 02
 
-記事02
+天使を意識した鉛筆が座る見込みはあるのだろうか？
 
-gjiaorj**gafrpag**jgaprjpa
-
-
-|title|text|
-|---|---|
-|こんにちは|Hello|

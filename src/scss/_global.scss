@@ -1,7 +1,7 @@
 @import "./reset.scss";
 
 :root {
-  --main-color: blue;
+  --main-color: rgb(22, 117, 204);
 }
 
 html {
@@ -28,6 +28,8 @@ a {
 body {
   --bg-color: #fff;
   --text-color: #444;
+  --shadow-color: #ddd;
+  --border-color: #ddd;
 
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -36,4 +38,6 @@ body {
 body[data-theme="dark"] {
   --bg-color: #161b22;
   --text-color: #c9d1d9;
+  --shadow-color: #666;
+  --border-color: #777;
 }
