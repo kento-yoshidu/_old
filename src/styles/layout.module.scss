@@ -1,6 +1,6 @@
 .layout {
-  width: clamp(342px, 50%, 1000px);
-  margin: 12vh auto;
-  padding: 50px 0;
-  box-shadow: 0 0 6px 1px #ddd;
+  width: clamp(334px, 50%, 1000px);
+  margin: 12vh auto 8vh;
+  padding: unquote("min(10vw, 40px)") 0;
+  box-shadow: 0 0 6px 1px var(--shadow-color);
 }

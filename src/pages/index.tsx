@@ -16,11 +16,7 @@ export async function getStaticProps() {
   }
 }
 
-interface Props {
-  allPosts: Item[]
-}
-
-const IndexPage: React.VFC<Props> = ({ allPosts }) => (
+const IndexPage = ({ allPosts }: { allPosts: Item[] }) => (
   <>
     <Head>
       <title>HOME | 怪文書置き場</title>
@@ -28,6 +24,7 @@ const IndexPage: React.VFC<Props> = ({ allPosts }) => (
 
     <PageTitle
       pageTitle="記事一覧"
+      count={allPosts.length}
     />
 
     <PostList

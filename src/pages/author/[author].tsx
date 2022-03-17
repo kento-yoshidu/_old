@@ -6,6 +6,8 @@ import { getPostsByAuthor } from "../../lib/getPostsByAuthor"
 import { PageTitle } from "../../components/pageTitle"
 import { PostList } from "../../components/postList"
 
+import { Item } from "../../types/types"
+
 export const getStaticPaths = async () => {
   const paths = getAuthors().map((author) => {
     return `/author/${author}/`
@@ -17,7 +19,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }: { params: any }) => {
+export const getStaticProps = async ({ params }: { params: { author: string }}) => {
   const author = params.author
 
   const postData = await getPostsByAuthor(author)
@@ -31,7 +33,7 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 }
 
 
-const AuthorPost = ({ postData, author }: { postData: any, author: string }) => (
+const AuthorPost = ({ postData, author }: { postData: Item[], author: string }) => (
   <>
     <Head>
       <title>{`${author}さんの記事一覧 | 怪文書置き場`}</title>
@@ -39,6 +41,7 @@ const AuthorPost = ({ postData, author }: { postData: any, author: string }) => 
 
     <PageTitle
       pageTitle={`${author}さんの記事一覧`}
+      count={postData.length}
     />
 
     <PostList
