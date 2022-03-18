@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
+import Image from "next/image"
 
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
@@ -51,65 +52,101 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
   }
 }
 
-const Post = ({ post }: { post: Item }) => (
-  <>
-    <Head>
-      <title>{`${post.title} | 怪文書置き場`}</title>
-    </Head>
+const Post = ({ post }: { post: Item }) => {
+  const MarkdownComponents: object = {
+    p: (paragraph: any) => {
+      const { node } = paragraph
 
-    <article className={Styles.post}>
+      console.log(node.children[0])
 
-      <p className={Styles.icon}>{post.icon}</p>
-      <h1 className={Styles.postTitle}>{ post.title }</h1>
+      if (node.children[0].tagName === "img") {
+        console.log(node.children[0])
+        const image = node.children[0]
+        const alt = image.properties.alt?.replace(/ *\{[^)]*\} */g, "")
+        const isPriority = image.properties.alt?.toLowerCase().includes("{priority}")
+        const metaWidth = image.properties.alt.match(/{([^}]+)x/)
+        const metaHeight = image.properties.alt.match(/x([^}]+)}/)
+        const width = metaWidth ? metaWidth[1] : "768"
+        const height = metaHeight ? metaHeight[1] : "432"
 
-      <div className={Styles.info}>
-        <div>
-          <time className={Styles.date}>
-            <FontAwesomeIcon icon={faClock} />
-            {post.date}
-          </time>
-          <time className={Styles.date}>
-            <FontAwesomeIcon icon={faClockRotateLeft} />
-            {post.update}
-          </time>
+        return (
+          <Image
+            src={`/blog${post.slug}${image.properties.src}`}
+            width={width}
+            height={height}
+            className="postImg"
+            alt={alt}
+            priority={isPriority}
+          />
+        )
+      }
+      return <p>{paragraph.children}</p>
+    }
+  }
+
+  return (
+    <>
+      <Head>
+        <title>{`${post.title} | 怪文書置き場`}</title>
+      </Head>
+
+      <article className={Styles.post}>
+
+        <p className={Styles.icon}>{post.icon}</p>
+        <h1 className={Styles.postTitle}>{ post.title }</h1>
+
+        <div className={Styles.info}>
+          <div>
+            <time className={Styles.date}>
+              <FontAwesomeIcon icon={faClock} />
+              {post.date}
+            </time>
+            <time className={Styles.date}>
+              <FontAwesomeIcon icon={faClockRotateLeft} />
+              {post.update}
+            </time>
+          </div>
+
+          <ul className={Styles.authors}>
+            <FontAwesomeIcon icon={faUser} />
+            {post.authors.map((author) => (
+              <li key={`author/li/${author}`}>
+                <Link
+                  key={`author/${author}`}
+                  href={`/author/${author}`}
+                >
+                  {author}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <ul className={Styles.tagList}>
+            {post.tags.map((tag) => (
+              <li
+                key={`tag/${tag}`}
+                className={Styles.tag}
+              >
+                <FontAwesomeIcon icon={faTag} />
+                <Link href={`/tag/${tag}`}>
+                  {tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <ul className={Styles.authors}>
-          <FontAwesomeIcon icon={faUser} />
-          {post.authors.map((author) => (
-            <li key={`author/li/${author}`}>
-              <Link
-                key={`author/${author}`}
-                href={`/author/${author}`}
-              >
-                {author}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <ul className={Styles.tagList}>
-          {post.tags.map((tag) => (
-            <li
-              key={`tag/${tag}`}
-              className={Styles.tag}
-            >
-              <FontAwesomeIcon icon={faTag} />
-              <Link href={`/tag/${tag}`}>
-                {tag}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <main className={Styles.main}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {post.content}
-        </ReactMarkdown>
-      </main>
-    </article>
-  </>
-)
+        <main className={Styles.main}>
+          <ReactMarkdown
+            components={MarkdownComponents}
+            remarkPlugins={[remarkGfm]}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </main>
+      </article>
+    </>
+  )
+}
 
 export default Post
