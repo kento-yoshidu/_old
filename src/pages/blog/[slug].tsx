@@ -57,10 +57,7 @@ const Post = ({ post }: { post: Item }) => {
     p: (paragraph: any) => {
       const { node } = paragraph
 
-      console.log(node.children[0])
-
       if (node.children[0].tagName === "img") {
-        console.log(node.children[0])
         const image = node.children[0]
         const alt = image.properties.alt?.replace(/ *\{[^)]*\} */g, "")
         const isPriority = image.properties.alt?.toLowerCase().includes("{priority}")
@@ -71,7 +68,7 @@ const Post = ({ post }: { post: Item }) => {
 
         return (
           <Image
-            src={`/blog${post.slug}${image.properties.src}`}
+            src={require(`../../contents/${post.slug}/${image.properties.src}`)}
             width={width}
             height={height}
             className="postImg"
