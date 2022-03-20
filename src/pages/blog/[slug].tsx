@@ -6,8 +6,9 @@ import Image from "next/image"
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
 
-import remarkGfm from "remark-gfm"
+import { Button } from "../../components/button"
 
+import remarkGfm from "remark-gfm"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
@@ -15,6 +16,10 @@ import {
   faUser,
   faTag
 } from "@fortawesome/free-solid-svg-icons"
+
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 import { Item } from "../../types/types"
 
@@ -67,14 +72,15 @@ const Post = ({ post }: { post: Item }) => {
         const height = metaHeight ? metaHeight[1] : "432"
 
         return (
-          <Image
-            src={require(`../../contents/${post.slug}/${image.properties.src}`)}
-            width={width}
-            height={height}
-            className="postImg"
-            alt={alt}
-            priority={isPriority}
-          />
+          <div className={Styles.imgWrapper}>
+            <Image
+              src={require(`../../contents/${post.slug}/images/${image.properties.src}`)}
+              width={width}
+              height={height}
+              alt={alt}
+              priority={isPriority}
+            />
+          </div>
         )
       }
       return <p>{paragraph.children}</p>
@@ -142,6 +148,8 @@ const Post = ({ post }: { post: Item }) => {
           </ReactMarkdown>
         </main>
       </article>
+
+      <Button />
     </>
   )
 }
