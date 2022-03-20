@@ -1,0 +1,31 @@
+.buttonWrapper {
+  text-align: center;
+}
+
+.button {
+  color: #444;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 18px 50px;
+  border: 2px solid #bbb;
+  display: inline-block;
+  transition: .3s;
+
+  &:hover {
+    color: #444;
+    animation: light 1.2s infinite;
+  }
+}
+
+@keyframes light {
+  0% {
+    outline: 2px solid;
+    outline-color: #bbb;
+    outline-offset: 0px;
+  }
+  100% { 
+    outline: 2px solid;
+    outline-color: transparent;
+    outline-offset: 12px;
+  }
+}
