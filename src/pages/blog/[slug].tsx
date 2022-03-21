@@ -9,6 +9,11 @@ import { getPostBySlug } from "../../lib/getPostBySlug"
 import { Button } from "../../components/button"
 
 import remarkGfm from "remark-gfm"
+{/* @ts-ignore */}
+import { CodeComponent } from "react-markdown/src/ast-to-react"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
@@ -55,6 +60,24 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
   return {
     props: { post }
   }
+}
+
+const CodeBlock: CodeComponent = ({ inline, className, children }: { inline?: string, className?: string, children: string[] }) => {
+  if (inline) {
+    return <code className={className}>{children}</code>
+  }
+
+  const match = /language-(\w+)/.exec(className || "")
+  const lang = match && match[1] ? match[1] : ""
+
+  return (
+    <SyntaxHighlighter
+      style={a11yDark}
+      language={lang}
+    >
+      {String(children).replace(/\n$/, "")}
+    </SyntaxHighlighter>
+  )
 }
 
 const Post = ({ post }: { post: Item }) => {
@@ -141,7 +164,10 @@ const Post = ({ post }: { post: Item }) => {
 
         <main className={Styles.main}>
           <ReactMarkdown
-            components={MarkdownComponents}
+            components={{
+              ...MarkdownComponents,
+              code: CodeBlock
+            }}
             remarkPlugins={[remarkGfm]}
           >
             {post.content}
