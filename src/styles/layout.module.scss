@@ -1,5 +1,6 @@
 .layout {
   width: clamp(334px, 50%, 1000px);
+  min-height: 50vh;
   margin: 12vh auto 8vh;
   padding: unquote("min(10vw, 40px)") 0;
   box-shadow: 0 0 6px 1px var(--shadow-color);
