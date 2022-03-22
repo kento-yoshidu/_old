@@ -1,7 +1,7 @@
 .postList {
   width: unquote("max(314px, 80%)");
   margin: 0 auto;
-  padding: unquote("min(3.5vw, 20px)") 0;
+  padding: unquote("min(3.5vw, 20px)") 0 0;
 }
 
 .listItem {
@@ -16,6 +16,8 @@
 .mainIcon {
   margin-right: unquote("min(5vw, 3rem)");
   font-size: clamp(3rem, 3vw, 5rem);
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .wrapper {
