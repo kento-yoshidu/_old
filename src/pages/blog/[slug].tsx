@@ -51,7 +51,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
     "title",
     "date",
     "update",
-    "authors",
+    "languages",
     "tags",
     "icon",
     "content"
@@ -135,13 +135,13 @@ const Post = ({ post }: { post: Item }) => {
 
           <ul className={Styles.authors}>
             <FontAwesomeIcon icon={faUser} />
-            {post.authors.map((author) => (
-              <li key={`author/li/${author}`}>
+            {post.languages.map((language) => (
+              <li key={`author/li/${language}`}>
                 <Link
-                  key={`author/${author}`}
-                  href={`/author/${author}`}
+                  key={`author/${language}`}
+                  href={`/author/${language}`}
                 >
-                  {author}
+                  {language}
                 </Link>
               </li>
             ))}
