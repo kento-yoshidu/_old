@@ -62,13 +62,13 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
               icon={faUser}
               className={Styles.icon}
             />
-            {post.authors.map((author) => (
-              <li key={`author/li/${author}`}>
+            {post.languages.map((language) => (
+              <li key={`language/li/${language}`}>
                 <Link
-                  href={`/author/${author}/`}
-                  key={`author/${author}`}
+                  href={`/language/${language}/`}
+                  key={`language/${language}`}
                 >
-                  {author}
+                  {language}
                 </Link>
               </li>
             ))}
