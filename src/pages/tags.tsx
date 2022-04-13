@@ -17,29 +17,31 @@ export const getStaticProps = async () => {
   }
 }
 
-const Tags = ({ allTags }: { allTags: string[] }) => (
-  <>
-    <Head>
-      <title>タグ一覧 | 怪文書置き場</title>
-    </Head>
+const Tags = ({ allTags }: { allTags: string[] }) => {
+  return (
+    <>
+      <Head>
+        <title>タグ一覧 | 怪文書置き場</title>
+      </Head>
 
-    <PageTitle
-      pageTitle="タグ一覧"
-    />
+      <PageTitle
+        pageTitle="タグ一覧"
+      />
 
-    <ul className={Styles.list}>
-      {allTags.map((tag) => (
-        <li
-          key={`${tag}`}
-          className={Styles.listItem}
-        >
-          <Link href={`/tag/${tag}/`}>
-            {tag}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </>
-)
+      <ul className={Styles.list}>
+        {allTags.map((tag) => (
+          <li
+            key={`${tag}`}
+            className={Styles.listItem}
+          >
+            <Link href={`/tag/${tag}/`}>
+              {`${tag}`}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
 
 export default Tags
