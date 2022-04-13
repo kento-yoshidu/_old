@@ -10,7 +10,7 @@
 }
 
 .postTitle {
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 1.5;
 }
 
@@ -60,7 +60,7 @@
 
   h1 {
     border-bottom: 5px solid var(--main-color);
-    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1.4;
   }
 
@@ -68,7 +68,7 @@
     margin: 45px 0 35px;
     padding-left: 12px;
     border-left: 8px solid var(--main-color);
-    font-size: clamp(2.2rem, 3.7vw, 4rem);
+    font-size: clamp(2.2rem, 3.7vw, 3.5rem);
     line-height: 1.4;
   }
 

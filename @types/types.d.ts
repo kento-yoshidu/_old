@@ -8,3 +8,7 @@ type Item = {
   tags: string[];
   icon: string;
 }
+
+type TagObj = {
+  [key: string]: number
+}
