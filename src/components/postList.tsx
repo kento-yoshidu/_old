@@ -1,8 +1,6 @@
 import React from "react"
 import Link from "next/link"
 
-import { Item } from "../types/types"
-
 import * as Styles from "../styles/postList.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
