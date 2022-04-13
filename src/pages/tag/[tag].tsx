@@ -6,8 +6,6 @@ import { getPostsByTag } from "../../lib/getPostsByTag"
 import { PostList } from "../../components/postList"
 import { PageTitle } from "../../components/pageTitle"
 
-import { Item } from "../../types/types"
-
 export const getStaticPaths = async () => {
   const paths = getTags().map((tag) => {
     return `/tag/${tag}`

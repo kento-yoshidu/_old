@@ -9,7 +9,7 @@ export const getTags = () => {
 
   let tags: string[] = []
 
-  allTags.forEach((post) => {
+  allTags.forEach((post: Item) => {
     post.tags.map((tag) => {
       tags = [...tags, ...post.tags]
     })
