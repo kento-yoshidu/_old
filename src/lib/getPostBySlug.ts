@@ -2,8 +2,6 @@ import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
 
-import { Item } from "../types/types"
-
 const postsDirectory = join(process.cwd(), "src/contents")
 
 export const getPostBySlug = (slug: string, fields: string[]) => {

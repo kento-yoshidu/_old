@@ -1,4 +1,4 @@
-export type Item = {
+type Item = {
   slug: string;
   content: string;
   title: string;

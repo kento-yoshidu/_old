@@ -26,8 +26,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-import { Item } from "../../types/types"
-
 import * as Styles from "../../styles/post.module.scss"
 
 export const getStaticPaths = async () => {

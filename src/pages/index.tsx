@@ -6,8 +6,6 @@ import { getAllPosts } from "../lib/getAllPosts"
 import { PostList } from "../components/postList"
 import { PageTitle } from "../components/pageTitle"
 
-import { Item } from "../types/types"
-
 export async function getStaticProps() {
   const allPosts = getAllPosts(["slug", "title", "date", "update", "languages", "tags", "icon"])
 

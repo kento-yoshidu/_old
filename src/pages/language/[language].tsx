@@ -6,9 +6,6 @@ import { getPostsByLanguage } from "../../lib/getPostsByLanguage"
 import { PageTitle } from "../../components/pageTitle"
 import { PostList } from "../../components/postList"
 
-import { Item } from "../../types/types"
-import { language } from "gray-matter"
-
 export const getStaticPaths = async () => {
   const paths = getLanguages().map((language) => {
     return `/language/${language}/`
