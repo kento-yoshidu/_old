@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
   faClockRotateLeft,
-  faUser,
+  faCode,
   faTag
 } from "@fortawesome/free-solid-svg-icons"
 
@@ -55,11 +55,12 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
             </time>
           </div>
 
-          <ul className={Styles.authors}>
+          <ul className={Styles.languages}>
             <FontAwesomeIcon
-              icon={faUser}
+              icon={faCode}
               className={Styles.icon}
             />
+
             {post.languages.map((language) => (
               <li key={`language/li/${language}`}>
                 <Link
