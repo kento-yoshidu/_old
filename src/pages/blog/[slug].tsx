@@ -6,6 +6,7 @@ import Image from "next/image"
 import { getAllPosts } from "../../lib/getAllPosts"
 import { getPostBySlug } from "../../lib/getPostBySlug"
 
+import { siteConfig } from "../../../site.config"
 import { Button } from "../../components/button"
 
 import remarkGfm from "remark-gfm"
@@ -111,7 +112,7 @@ const Post = ({ post }: { post: Item }) => {
   return (
     <>
       <Head>
-        <title>{`${post.title} | 怪文書置き場`}</title>
+        <title>{`${post.title} | ${siteConfig.siteData.title}`}</title>
       </Head>
 
       <article className={Styles.post}>

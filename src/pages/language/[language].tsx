@@ -3,6 +3,7 @@ import Head from "next/head"
 import { getLanguages } from "../../lib/getLanguages"
 import { getPostsByLanguage } from "../../lib/getPostsByLanguage"
 
+import { siteConfig } from "../../../site.config"
 import { PageTitle } from "../../components/pageTitle"
 import { PostList } from "../../components/postList"
 
@@ -34,7 +35,7 @@ export const getStaticProps = async ({ params }: { params: { language: string }}
 const LanguagePost = ({ postData, language }: { postData: Item[], language: string }) => (
   <>
     <Head>
-      <title>{`${language}の記事一覧 | 怪文書置き場`}</title>
+      <title>{`${language}の記事一覧 | ${siteConfig.siteData.title}`}</title>
     </Head>
 
     <PageTitle

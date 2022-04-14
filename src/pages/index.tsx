@@ -3,6 +3,7 @@ import Head from "next/head"
 
 import { getAllPosts } from "../lib/getAllPosts"
 
+import { siteConfig } from "../../site.config"
 import { PostList } from "../components/postList"
 import { PageTitle } from "../components/pageTitle"
 
@@ -17,7 +18,7 @@ export async function getStaticProps() {
 const IndexPage = ({ allPosts }: { allPosts: Item[] }) => (
   <>
     <Head>
-      <title>HOME | 怪文書置き場</title>
+      <title>{`HOME | ${siteConfig.siteData.title}`}</title>
     </Head>
 
     <PageTitle

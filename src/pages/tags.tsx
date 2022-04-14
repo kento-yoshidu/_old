@@ -3,6 +3,7 @@ import Head from "next/head"
 
 import { getTags } from "../lib/getTags"
 
+import { siteConfig } from "../../site.config"
 import { PageTitle } from "../components/pageTitle"
 
 import * as Styles from "../styles/tags.module.scss"
@@ -20,7 +21,7 @@ export const getStaticProps = async () => {
 const Tags = ({ allTags }: { allTags: TagObj }) => (
   <>
     <Head>
-      <title>タグ一覧 | 怪文書置き場</title>
+      <title>{`タグ一覧 | ${siteConfig.siteData.title}`}</title>
     </Head>
 
     <PageTitle
