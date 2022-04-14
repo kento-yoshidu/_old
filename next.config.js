@@ -6,24 +6,10 @@ module.exports = withPlugins([[optimizedImages, {}]], {
     config.module.rules.push({
       test: /\.md$/,
       use: "raw-loader"
-    });
+    })
     return config
   },
   images: {
     disableStaticImages: true
   }
 })
-
-/*
-/** @type {import('next').NextConfig}
-module.exports = {
-  webpack: function(config) {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    })
-    return config
-  },
-  reactStrictMode: true,
-}
-*/
