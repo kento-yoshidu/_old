@@ -7,7 +7,7 @@ import { PostList } from "../../components/postList"
 import { PageTitle } from "../../components/pageTitle"
 
 export const getStaticPaths = async () => {
-  const paths = getTags().map((tag) => {
+  const paths = Object.keys(getTags()).map((tag) => {
     return `/tag/${tag}`
   })
 

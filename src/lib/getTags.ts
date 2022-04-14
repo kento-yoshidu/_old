@@ -13,6 +13,11 @@ export const getTags = () => {
     tags = [...tags, ...post.tags]
   })
 
-  const setTags = [...new Set(Array.from(tags))]
-  return setTags.sort()
+  const tagObj: TagObj = {}
+
+  tags.forEach((i) => {
+    tagObj[i] = (tagObj[i] || 0) + 1
+  })
+
+  return tagObj
 }
