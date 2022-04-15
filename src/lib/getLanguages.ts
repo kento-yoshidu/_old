@@ -6,9 +6,7 @@ export const getLanguages = (): string[] => {
   let languages: string[] = []
 
   allLanguages.forEach((post: Item) => {
-    post.languages.map((_) => {
-      languages = [...languages, ...post.languages]
-    })
+    languages = [...languages, ...post.languages]
   })
 
   const setAuthors = [...new Set(Array.from(languages))]

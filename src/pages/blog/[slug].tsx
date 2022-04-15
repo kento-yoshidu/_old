@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
   faClockRotateLeft,
-  faUser,
+  faCode,
   faTag
 } from "@fortawesome/free-solid-svg-icons"
 
@@ -132,13 +132,13 @@ const Post = ({ post }: { post: Item }) => {
             </time>
           </div>
 
-          <ul className={Styles.authors}>
-            <FontAwesomeIcon icon={faUser} />
+          <ul className={Styles.languages}>
+            <FontAwesomeIcon icon={faCode} />
             {post.languages.map((language) => (
-              <li key={`author/li/${language}`}>
+              <li key={`language/li/${language}`}>
                 <Link
-                  key={`author/${language}`}
-                  href={`/author/${language}`}
+                  key={`language/${language}`}
+                  href={`/language/${language}`}
                 >
                   {language}
                 </Link>
