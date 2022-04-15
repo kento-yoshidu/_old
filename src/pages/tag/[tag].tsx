@@ -18,7 +18,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }: { params: any }) => {
+export const getStaticProps = async ({ params }: { params: { tag: string }}) => {
   const tag = params.tag
 
   const postData = await getPostsByTag(tag)
@@ -34,7 +34,7 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 const Post = ({ postData, tag }: { postData: Item[], tag: string }) => (
   <>
     <Head>
-      <title>{`${tag}タグの記事一覧 | ${siteConfig.siteData.title}`}</title>
+      <title>{`${tag} タグの記事一覧 | ${siteConfig.siteData.title}`}</title>
     </Head>
 
     <PageTitle
