@@ -19,9 +19,11 @@
   flex-direction: column;
   gap: 15px;
   font-weight: 900;
+  letter-spacing: 1px;
 
   svg {
-    margin-right: 10px;
+    margin-right: 8px;
+    width: 3rem;
   }
 }
 
@@ -65,7 +67,7 @@
   }
 
   h2 {
-    margin: 45px 0 35px;
+    margin: 55px 0 25px;
     padding-left: 12px;
     border-left: 8px solid var(--main-color);
     font-size: clamp(2.2rem, 3.7vw, 3.5rem);
@@ -78,6 +80,15 @@
     letter-spacing: 1px;
     line-height: 1.5;
     text-indent: 0.8rem;
+
+    code {
+      margin: 0 3px;
+      padding: 1px 5px;
+      background-color: #bbb;
+      border-radius: 2px;
+      color: #444;
+      font-family: inherit;
+    }
   }
 
   .imgWrapper {
