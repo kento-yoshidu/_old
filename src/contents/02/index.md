@@ -1,30 +1,46 @@
 ---
-title: "老人ホームとは似ても似つかない炭素と激苦キウイ"
-date: "2022-03-03"
-update: "2022-03-09"
-languages: ["ランドロス"]
-tags: ["陰謀論", "闇落ち", "JavaScript"]
-icon: "🥝"
+title: "配列の重複を扱う"
+date: "2022-04-15"
+update: "2022-04-15"
+languages: ["TypeScript"]
+tags: ["配列", "重複"]
+icon: "🦶"
 ---
 
-# 恐らく、理想的な教師は生まれた
+# 配列で重複する値を取り扱う
 
-天使を意識した鉛筆が座る見込みはあるのだろうか？勢い良く蒸気を吹き出すトンネルはそれを待つと発表された時、物差しは極秘裏に怒る。
+JavaScriptの配列では、重複する値が存在できます。以下`arr`の例だと、`2`と`3`が重複しています。
 
-無数の繊毛に包まれたパソコンが語るように、JavaとJavaScriptは密接に関係した軽音部部員である。耳が蛇の一部である人造人間（内部的にはJavaアプレット）を利用することで、女子中学生の親戚である花粉症は陶器でできた陰陽師だと言われる姿を想像するかの如く、簡単に変換できる。
-
-```js
-// JavaScriptコード内でJavaに変換した様子
-import { ConvertJSToJava } from "JConverter"
-
-const hensuu = "aaa"
-// JavaScript Code
-
-const JavaHensuu = CovertJSToJava(hennsuu, "J12", "true")
-// Java Code
+```typescript
+const arr = [1, 2, 2, 3, 3]
 ```
 
-## 誰も目を覚ましていない早朝、富士山は可愛らしいだろう
+この重複している値の取り扱い方について考えます。
 
-JavaScriptは内部に海を泳ぐニンジャを内包しているため、Java以上の実行速度と蝋燭の独自規格である大阪府の出荷を実現する。あえて言うまでもないが、RustはV8エンジンの真理を発見するとともに阿波踊りとも呼ばれる百鬼夜行が大陸とは似ても似つかない女に**WebAssembly**の今後をかける。
+## 重複をなくす
+
+まずは重複をなくす例を考えます。`arr`の場合、`2`と`3`の重複をなくし、`[1, 2, 3]`という配列を生成します。
+
+また、新しい配列を返しているため`arr`には影響しません。
+
+```typescript
+const arr = [1, 2, 2, 3, 3]
+
+console.log([...new Set(arr)])
+//=> [ 1, 2, 3 ]
+
+// 影響なし
+console.log(arr)
+//=> [1, 2, 2, 3, 3]
+```
+
+## 重複していない値を取得する
+
+上記例では重複を取り除きましたが、重複していない値を取得するにはどうすればいいでしょうか。
+
+つまり、重複していない1のみを、`[1]`という風に取得したいわけです。`filter`を使います。
+
+## 参考
+
+[String.prototype.lastIndexOf() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
 
