@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import "../scss/_global.scss"
 import type { AppProps } from "next/app"
 
@@ -8,6 +10,11 @@ import { Footer } from "../components/footer"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta name="theme-color" content="#f9a8d4" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <Header />
       <Layout>
         <Component {...pageProps} />
