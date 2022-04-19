@@ -1,12 +1,12 @@
 {
-	"name":				"",
-	"short_name":		"",
-	"description":		"",
-	"start_url":		"/",
-	"display":			"standalone",
-	"orientation":		"any",
-	"background_color":	"#fff",
-	"theme_color":		"#fff",
+  "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "next sample pwa",
+    "short_name": "pwa",
+    "description": "This is a demo to create PWA with next",
 	"icons": [
 		{
 			"src": "/android-chrome-36x36.png",
