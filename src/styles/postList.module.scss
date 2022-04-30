@@ -18,6 +18,8 @@
   font-size: clamp(3rem, 3vw, 5rem);
   text-align: center;
   flex-shrink: 0;
+  width: min(9vw, 6.7rem);
+  text-align: center;
 }
 
 .wrapper {
@@ -38,8 +40,8 @@
 }
 
 .icon {
-  width: 3rem;
-  margin-right: 8px;
+  width: min(5.2vw, 3rem);
+  margin-right: min(0.7vw, 8px);
   font-size: clamp(1.4rem, 1.8vw, 1.75rem);
 }
 
@@ -49,7 +51,7 @@
 }
 
 .date {
-  margin-right: 20px;
+  margin-right: min(1.4vw, 20px);
 }
 
 .languages {
