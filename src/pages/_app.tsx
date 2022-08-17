@@ -1,11 +1,13 @@
 import Head from "next/head"
 
+import "tailwindcss/tailwind.css"
 import "../scss/_global.scss"
-import type { AppProps } from "next/app"
 
 import { Layout } from "../components/layout"
 import { Header } from "../components/header"
 import { Footer } from "../components/footer"
+
+import type { AppProps } from "next/app"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
