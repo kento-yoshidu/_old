@@ -7,8 +7,8 @@ import { SwitchTheme } from "./switchTheme"
 import * as Styles from "../styles/header.module.scss"
 
 export const Header: React.VFC = () => (
-  <header className={Styles.header}>
-    <h1 className={Styles.headerTitle}>
+  <header className="w-screen h-20 relative md:fixed top-0 flex justify-center md:content-center z-50 bg-white shadow-3xl">
+    <h1 className="md:text-4xl">
       <Link href="/">
         {`📚 ${siteConfig.siteData.title}`}
       </Link>
