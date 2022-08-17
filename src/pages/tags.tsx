@@ -28,14 +28,16 @@ const Tags = ({ allTags }: { allTags: TagObj }) => (
       pageTitle="タグ一覧"
     />
 
-    <ul className={Styles.list}>
+    <ul className="flex flex-wrap justify-center gap-4 md:gap-8 my-16 mx-auto w-5/6">
       {Object.keys(allTags).map((tag) => (
         <li
           key={`${tag}`}
-          className={Styles.listItem}
+          className="py-2 md:py-4 px-4 md:px-6 border rounded-md"
         >
           <Link href={`/tag/${tag}/`}>
-            {`${tag} (${allTags[tag]})`}
+            <a className="text-2xl md:text-4xl">
+              {`${tag} (${allTags[tag]})`}
+            </a>
           </Link>
         </li>
       ))}
