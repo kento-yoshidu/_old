@@ -1,6 +1,5 @@
 import Head from "next/head"
 
-import "tailwindcss/tailwind.css"
 import "../scss/_global.scss"
 
 import { Layout } from "../components/layout"
