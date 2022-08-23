@@ -1,11 +1,9 @@
 import Link from "next/link"
 
-import * as Styles from "../styles/button.module.scss"
-
 export const Button = () => (
-  <div className={Styles.buttonWrapper}>
+  <div className="text-center">
     <Link href="/">
-      <a className={Styles.button}>
+      <a className="text-4xl border-2 text-gray-500 border-gray-500 py-4 px-12 hover:animate-light">
         HOME
       </a>
     </Link>

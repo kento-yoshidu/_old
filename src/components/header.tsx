@@ -7,10 +7,12 @@ import { SwitchTheme } from "./switchTheme"
 import * as Styles from "../styles/header.module.scss"
 
 export const Header: React.VFC = () => (
-  <header className="w-screen h-20 relative md:fixed top-0 flex justify-center md:content-center z-50 bg-white shadow-3xl">
-    <h1 className="md:text-4xl">
+  <header className="w-screen h-16 relative md:fixed top-0 flex justify-center z-50 bg-white shadow-3xl">
+    <h1 className="border">
       <Link href="/">
-        {`📚 ${siteConfig.siteData.title}`}
+        <a className="text-2xl">
+          {`📚 ${siteConfig.siteData.title}`}
+        </a>
       </Link>
     </h1>
 
