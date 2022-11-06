@@ -9,7 +9,7 @@ icon: "🦶"
 
 # 配列で重複する値を取り扱う
 
-JavaScriptの配列では、重複する値が存在できます。以下`arr`の例だと、`2`と`3`が重複しています。
+以下`arr`の例だと、`2`と`3`が重複しています。
 
 ```typescript
 const arr = [1, 2, 2, 3, 3]
@@ -43,4 +43,3 @@ console.log(arr)
 ## 参考
 
 [String.prototype.lastIndexOf() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
-
