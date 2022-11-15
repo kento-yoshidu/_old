@@ -16,7 +16,7 @@ export const Header: React.VFC = () => (
       </Link>
     </h1>
 
-    <ul className={Styles.linkList}>
+    <ul>
       <li className="md:text-xl font-bold">
         <Link href="/tags/">タグ一覧</Link>
       </li>
