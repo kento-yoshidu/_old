@@ -1,5 +1,5 @@
 ---
-title: "配列の重複を扱う"
+title: "ランダムな数値をn進数で出力する"
 date: "2022-04-15"
 update: "2022-04-15"
 languages: ["TypeScript"]
