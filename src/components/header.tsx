@@ -4,8 +4,6 @@ import Link from "next/link"
 import { siteConfig } from "../../site.config"
 import { SwitchTheme } from "./switchTheme"
 
-import * as Styles from "../styles/header.module.scss"
-
 export const Header: React.VFC = () => (
   <header className="w-screen h-[60px] relative md:fixed top-0 flex justify-center z-50 bg-white shadow-3xl">
     <h1 className="leading-[60px] text-sm">
@@ -16,9 +14,13 @@ export const Header: React.VFC = () => (
       </Link>
     </h1>
 
-    <ul>
+    <ul className="absolute md:right-64 h-[60px]">
       <li className="md:text-xl font-bold">
-        <Link href="/tags/">タグ一覧</Link>
+        <Link href="/tags/">
+          <a className="leading-[60px]">
+            タグ一覧
+          </a>
+        </Link>
       </li>
     </ul>
 
