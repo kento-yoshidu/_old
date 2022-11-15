@@ -20,10 +20,11 @@ interface Props {
 }
 
 export const PostList: React.VFC<Props> = ({ allPosts }) => (
-  <ul className={Styles.postList}>
+  <ul className="md:w-5/6 mx-auto">
     {allPosts.map((post) => (
       <li
-        className={Styles.listItem}
+        // className={Styles.listItem}
+        className="flex items-center mb-8 px-6 py-4 border-2 rounded-md"
         key={`${post.title}key`}
       >
         <p className={Styles.mainIcon}>{post.icon}</p>
@@ -32,33 +33,33 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
           <Link
             href={`/blog/${post.slug}/`}
           >
-            <a className={Styles.postTitle}>
+            <a className="text-2xl font-bold hover:text-main-color">
               {post.title}
             </a>
           </Link>
 
-          <div className={Styles.dateWrapper}>
-            <time className={Styles.date}>
+          <div className="text-md font-bold">
+            <time className="mr-10">
               <FontAwesomeIcon
                 icon={faClock}
-                className={Styles.icon}
+                className="mr-2"
               />
               {post.date}
             </time>
 
-            <time className={Styles.date}>
+            <time className="text-md">
               <FontAwesomeIcon
                 icon={faClockRotateLeft}
-                className={Styles.icon}
+                className="mr-2 text-md"
               />
               {post.update}
             </time>
           </div>
 
-          <ul className={Styles.languages}>
+          <ul className="flex items-center text-md font-bold">
             <FontAwesomeIcon
               icon={faCode}
-              className={Styles.icon}
+              className="mr-2"
             />
 
             {post.languages.map((language) => (
@@ -73,15 +74,15 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
             ))}
           </ul>
 
-          <ul className={Styles.tagList}>
+          <ul className="flex flex-wrap">
             {post.tags.map((tag) => (
               <li
                 key={`${post}${tag}`}
-                className={Styles.tag}
+                className="mr-4 text-md font-bold"
               >
                 <FontAwesomeIcon
                   icon={faTag}
-                  className={Styles.icon}
+                  className="mr-2"
                 />
                 <Link href={`/tag/${tag}/`}>
                   {tag}
