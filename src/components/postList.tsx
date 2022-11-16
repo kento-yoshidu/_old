@@ -1,8 +1,6 @@
 import React from "react"
 import Link from "next/link"
 
-import * as Styles from "../styles/postList.module.scss"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
@@ -23,22 +21,21 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
   <ul className="md:w-5/6 mx-auto">
     {allPosts.map((post) => (
       <li
-        // className={Styles.listItem}
-        className="flex items-center mb-8 px-6 py-4 border-2 rounded-md"
+        className="flex items-center mb-8 p-6 border-2 rounded-md"
         key={`${post.title}key`}
       >
-        <p className={Styles.mainIcon}>{post.icon}</p>
+        <p className="ml-4 mr-12 text-5xl">{post.icon}</p>
 
-        <div className={Styles.wrapper}>
+        <div className="flex flex-col">
           <Link
             href={`/blog/${post.slug}/`}
           >
-            <a className="text-2xl font-bold hover:text-main-color">
+            <a className="mb-4 text-2xl font-bold hover:text-main-color">
               {post.title}
             </a>
           </Link>
 
-          <div className="text-md font-bold">
+          <div className="mb-2 text-md font-bold">
             <time className="mr-10">
               <FontAwesomeIcon
                 icon={faClock}
@@ -56,7 +53,7 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
             </time>
           </div>
 
-          <ul className="flex items-center text-md font-bold">
+          <ul className="flex items-center mb-2 text-md font-bold">
             <FontAwesomeIcon
               icon={faCode}
               className="mr-2"
