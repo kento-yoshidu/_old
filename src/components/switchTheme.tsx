@@ -44,18 +44,19 @@ export const SwitchTheme = () => {
 
   return (
     <button
-      className={Styles.button}
+      // className={Styles.button}
+      className="absolute flex items-center top-1/2 -translate-y-1/2 right-4 md:right-48"
       onClick={clickHandle}
     >
       {theme === "light" ? (
         <FontAwesomeIcon
-          className={Styles.sun}
           icon={faSun}
+          className="text-4xl text-orange-400"
         />
       ) : (
         <FontAwesomeIcon
           icon={faMoon}
-          className={Styles.moon}
+          className="text-4xl text-yellow-400"
         />
       )}
     </button>
