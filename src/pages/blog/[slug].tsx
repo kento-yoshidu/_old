@@ -28,6 +28,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
 import * as Styles from "../../styles/post.module.scss"
+import { RichText } from "../../styles/markdownStyle"
 
 export const getStaticPaths = async () => {
   const posts = getAllPosts(["slug", "date"])
@@ -161,7 +162,7 @@ const Post = ({ post }: { post: Item }) => {
           </ul>
         </div>
 
-        <main className={Styles.main}>
+        <main className={RichText}>
           <ReactMarkdown
             components={{
               ...MarkdownComponents,
