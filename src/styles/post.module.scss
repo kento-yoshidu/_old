@@ -62,7 +62,7 @@
 
   h1 {
     border-bottom: 5px solid var(--main-color);
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
     line-height: 1.4;
   }
 
@@ -70,13 +70,13 @@
     margin: 55px 0 25px;
     padding-left: 12px;
     border-left: 8px solid var(--main-color);
-    font-size: clamp(2.2rem, 3.7vw, 3.5rem);
+    font-size: clamp(1.2rem, 2.7vw, 2.5rem);
     line-height: 1.4;
   }
 
   p {
     margin-bottom: 20px;
-    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
     letter-spacing: 1px;
     line-height: 1.5;
     text-indent: 0.8rem;
@@ -113,7 +113,7 @@
   }
 
   pre {
-    font-size: clamp(1.5rem, 2vw, 1.7rem);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
   }
 
   strong {
