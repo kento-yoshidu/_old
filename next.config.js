@@ -9,6 +9,7 @@ const nextConfig = withPWA({
       test: /\.md$/,
       use: "raw-loader"
     })
+
     return config
   },
   images: {
