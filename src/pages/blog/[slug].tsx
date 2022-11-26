@@ -116,25 +116,34 @@ const Post = ({ post }: { post: Item }) => {
         <title>{`${post.title} | ${siteConfig.siteData.title}`}</title>
       </Head>
 
-      <article className={Styles.post}>
+      <article className="py-8 md:w-4/5 mx-auto">
 
-        <p className={Styles.icon}>{post.icon}</p>
-        <h1 className={Styles.postTitle}>{ post.title }</h1>
+        <p className="mb-14 text-7xl text-center">{post.icon}</p>
+        <h1 className="mb-10 text-4xl text-center">{ post.title }</h1>
 
-        <div className={Styles.info}>
+        <div className="flex flex-col gap-2 text-lg font-bold">
           <div>
-            <time className={Styles.date}>
-              <FontAwesomeIcon icon={faClock} />
+            <time className="mr-6 text-lg">
+              <FontAwesomeIcon
+                icon={faClock}
+                className="mr-2"
+              />
               {post.date}
             </time>
-            <time className={Styles.date}>
-              <FontAwesomeIcon icon={faClockRotateLeft} />
+            <time className="text-lg">
+              <FontAwesomeIcon
+                icon={faClockRotateLeft}
+                className="mr-2"
+              />
               {post.update}
             </time>
           </div>
 
-          <ul className={Styles.languages}>
-            <FontAwesomeIcon icon={faCode} />
+          <ul className="flex items-center">
+            <FontAwesomeIcon
+              icon={faCode}
+              className="mr-2"
+            />
             {post.languages.map((language) => (
               <li key={`language/li/${language}`}>
                 <Link
@@ -147,13 +156,16 @@ const Post = ({ post }: { post: Item }) => {
             ))}
           </ul>
 
-          <ul className={Styles.tagList}>
+          <ul className="flex">
             {post.tags.map((tag) => (
               <li
                 key={`tag/${tag}`}
-                className={Styles.tag}
+                className="mr-6"
               >
-                <FontAwesomeIcon icon={faTag} />
+                <FontAwesomeIcon
+                  icon={faTag}
+                  className="mr-2"
+                />
                 <Link href={`/tag/${tag}`}>
                   {tag}
                 </Link>
@@ -162,7 +174,7 @@ const Post = ({ post }: { post: Item }) => {
           </ul>
         </div>
 
-        <main className={RichText}>
+        <main className={`${RichText} mt-10`}>
           <ReactMarkdown
             components={{
               ...MarkdownComponents,

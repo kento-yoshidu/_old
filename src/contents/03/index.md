@@ -1,5 +1,5 @@
 ---
-title: "ランダムな数値をn進数で出力する"
+title: "【TS】ランダムな数値をn進数で出力する"
 date: "2022-04-15"
 update: "2022-04-15"
 languages: ["TypeScript"]
