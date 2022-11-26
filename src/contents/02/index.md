@@ -1,10 +1,10 @@
 ---
-title: "配列の重複を扱う"
+title: "【TS】配列の重複を扱う"
 date: "2022-04-15"
 update: "2022-04-15"
 languages: ["TypeScript"]
 tags: ["配列", "重複"]
-icon: "🦶"
+icon: "🙇"
 ---
 
 # 配列で重複する値を取り扱う

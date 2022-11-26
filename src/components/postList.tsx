@@ -18,7 +18,7 @@ interface Props {
 }
 
 export const PostList: React.VFC<Props> = ({ allPosts }) => (
-  <ul className="md:w-5/6 mx-auto">
+  <ul className="md:w-4/5 mx-auto">
     {allPosts.map((post) => (
       <li
         className="flex items-center mb-8 p-6 border-2 rounded-md"
@@ -30,7 +30,7 @@ export const PostList: React.VFC<Props> = ({ allPosts }) => (
           <Link
             href={`/blog/${post.slug}/`}
           >
-            <a className="mb-4 text-2xl font-bold hover:text-main-color">
+            <a className="-ml-4 mb-4 text-2xl font-bold hover:text-main-color">
               {post.title}
             </a>
           </Link>

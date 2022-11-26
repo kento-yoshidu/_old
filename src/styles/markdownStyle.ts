@@ -4,7 +4,8 @@ import tw from "twin.macro"
 export const RichText = css`
   h1 {
     border-bottom: 5px solid var(--main-color);
-    font-size: clamp(1.5rem, 3vw, 2.7rem);
+    font-size: clamp(1.2rem, 2.5vw, 2.3rem);
+    font-weight: 900;
     line-height: 1.4;
     margin-bottom: 30px;
   }
@@ -13,7 +14,7 @@ export const RichText = css`
     margin: 55px 0 25px;
     padding-left: 12px;
     border-left: 8px solid var(--main-color);
-    font-size: clamp(1.2rem, 2.7vw, 2.5rem);
+    font-size: clamp(1rem, 2.3vw, 2rem);
     line-height: 1.4;
   }
 
@@ -56,7 +57,7 @@ export const RichText = css`
   }
 
   pre {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
   }
 
   strong {

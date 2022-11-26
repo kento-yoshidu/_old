@@ -1,49 +1,6 @@
 .post {
-  padding: unquote("min(6vw, 40px)") 0 50px;
   margin: 0 auto;
   width: unquote("max(300px, 80%)");
-}
-
-.icon {
-  font-size: clamp(4rem, 5vw, 7rem);
-  text-align: center;
-}
-
-.postTitle {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.5;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  font-weight: 900;
-  letter-spacing: 1px;
-
-  svg {
-    margin-right: 8px;
-    width: 3rem;
-  }
-}
-
-.date,
-.languages,
-.tag {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-}
-
-.date {
-  margin-right: 30px;
-}
-
-.languages {
-  display: flex;
-  list-style: none;
-
-  li {
-    margin-right: 12px;
-  }
 }
 
 .tagList {
