@@ -24,6 +24,5 @@ export const Header: React.VFC = () => (
       </li>
     </ul>
 
-    <SwitchTheme />
   </header>
 )
