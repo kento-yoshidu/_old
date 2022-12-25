@@ -1,16 +1,3 @@
 {
-  "extends": [
-    "google",
-    "next",
-    "next/core-web-vitals"
-  ],
-  "rules": {
-    "semi": ["warn", "never"],
-    "quotes": ["warn", "double"],
-    "object-curly-spacing": ["warn", "always"],
-    "require-jsdoc": "off",
-    "no-unused-vars": "off",
-    "comma-dangle": ["warn", "never"],
-    "max-len": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
